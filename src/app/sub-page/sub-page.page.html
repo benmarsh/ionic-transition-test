@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Sub Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center ion-padding" *ngIf="photos.length === 0">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-card *ngFor="let photo of photos">
+    <ion-card-content>
+      <ion-img [src]="photo.thumbnailUrl"></ion-img>
+      <div>{{ photo.title }}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
